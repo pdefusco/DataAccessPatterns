@@ -15,14 +15,15 @@ for prop in root.findall('property'):
 
 print("The correct ADLS 2 URL is:{}".format(storage))
 
+os.environ['STORAGE'] = storage
+
 #Now some sample CLI commands to create a test dir and upload a file from CML 
 #You can run these within a notebook, editor file, or in the session prompt (bottom right) with an exclamation mark
 #Or you can run these in the terminal (top right) without the exclamation mark
 
-!hdfs dfs -mkdir -p $STORAGE/datalake
-!hdfs dfs -mkdir -p $STORAGE/datalake/mytestdir
-!hdfs dfs -copyFromLocal /home/cdsw/test_file.csv $STORAGE/datalake/mytestdir/test_file.csv
-!hdfs dfs -ls $STORAGE/datalake/mytestdir
+!hdfs dfs -mkdir -p $STORAGE/mytestdir
+!hdfs dfs -copyFromLocal /home/cdsw/test_file.csv $STORAGE/mytestdir/test_file.csv
+!hdfs dfs -ls $STORAGE/mytestdir
 
 #Optionally: remove the testdir:
 #Run this command after you test the SparkSession in the spark_read_adls2.py file
