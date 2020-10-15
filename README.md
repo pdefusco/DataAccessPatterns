@@ -1,6 +1,6 @@
 # READ AND WRITE FILES IN ADLS 2 WITH CML
 
-This project is a quickstrt to show how to get ADLS2 URL and read/write files into it via Spark
+This project is a quickstart to show how to get ADLS2 URL and read/write files into it via Spark
 
 
 # INSTRUCTIONS FOR USE
