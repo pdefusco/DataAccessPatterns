@@ -1,6 +1,6 @@
 # READ AND WRITE FILES IN OBJECT STORAGE WITH CML
 
-This project is a quickstart to show how to get OBJECT STORAGE URL (S3 OR ADLS2) and read/write files into it via Spark
+This project is a quickstart to show how to get OBJECT STORAGE URL and read/write files into it via Spark. It works for both S3 or ADLS2 without making changes. 
 
 
 # INSTRUCTIONS FOR USE
