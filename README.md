@@ -9,12 +9,12 @@ This project is a quickstart to show how to get OBJECT STORAGE URL and read/writ
     - use "!pip3 install -r requirements.txt" if in session prompt
 
 
-2. Execute get_adls2_url.py (you can run this in a session with "Workbench" editor option)
+2. Execute "read_cloud_storage_url.py" (you can run this in a session with "Workbench" editor option)
     - This will get the correct url from hive-site.xml
     - Then it will use CLI commands to put a small csv in a test dir
     
     
-3. Execute spark_read_adls2.py (you can run this in a session with "Workbench" editor option)
+3. Execute "read_cloud_storage_spark.py" (you can run this in a session with "Workbench" editor option)
     - This will read the test csv file into a SparkSession and create a DataFrame
     - Then it will write the same file into another test dir with parquet format
     
