@@ -23,17 +23,23 @@ spark = SparkSession\
 
 storage = os.environ['STORAGE']
     
-testDF = spark.read.csv("{}/mytestdir/test_file.csv".format(storage),             
+csvDF = spark.read.csv("{}/mytestdir/test_file.csv".format(storage),             
   header=True,
   sep=','
 )
 
 #Checking the file has been loaded correctly
-testDF.show()
+csvDF.show()
 
-#Checking the file can be written correctly from SparkSession
+#Read parquet via Spark
+parquetDF = spark.read.parquet("{}/mytestdir/userdata1.parquet".format(storage))
 
-testDF.write.mode("overwrite").parquet("{}/mytestdir/parquetfile/test".format(storage))
+#Checking the file has been loaded correctly
+parquetDF.show()
+
+
+#Write csv file back to cloud storage in parquet format
+csvDF.write.mode("overwrite").parquet("{}/mytestdir/parquetfile/test".format(storage))
 
 !hdfs dfs -ls $STORAGE/mytestdir/parquetfile/test
 

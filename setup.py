@@ -22,7 +22,8 @@ os.environ['STORAGE'] = storage
 #Or you can run these in the terminal (top right) without the exclamation mark
 
 !hdfs dfs -mkdir -p $STORAGE/mytestdir
-!hdfs dfs -copyFromLocal /home/cdsw/test_file.csv $STORAGE/mytestdir/test_file.csv
+!hdfs dfs -copyFromLocal /home/cdsw/data/test_file.csv $STORAGE/mytestdir/test_file.csv
+!hdfs dfs -copyFromLocal /home/cdsw/data/userdata1.parquet $STORAGE/mytestdir/userdata1.parquet
 !hdfs dfs -ls $STORAGE/mytestdir
 
 #Optionally: remove the testdir:
