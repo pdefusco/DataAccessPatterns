@@ -47,4 +47,4 @@ This project is a quickstart to show how to connect to S3 and ADLS with or witho
         
 4. Execute "adls2pandas.py" to read the parquet file into Pandas directly from ADLS 
 
-![alt-text]("img/read_from_adls.png)
+![alt-text](img/read_from_adls.png)
