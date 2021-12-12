@@ -1,23 +1,50 @@
-# READ AND WRITE FILES IN OBJECT STORAGE WITH CML
+# Cloudera Machine Learning Quickstart
 
-This project is a quickstart to show how to get OBJECT STORAGE URL and read/write files into it via Spark. It works for both S3 or ADLS2 without making changes. 
+## Summary
+
+This project is a quickstart to show how to connect to S3 and ADLS with or without Spark from CML. 
+
+- The "cloud2spark.py" script works for both S3 or ADLS2 without making changes. 
+- The "adls2pandas.py" script is designed to read from ADLS2.
 
 
-# INSTRUCTIONS FOR USE
-
-1. Install requirements: run "pip3 install -r requirements.txt" in a Session (terminal or session prompt) 
-    - use "!pip3 install -r requirements.txt" if in session prompt
+# Steb by Step Instructions 
 
 
-2. Execute "read_cloud_storage_url.py" (you can run this in a session with "Workbench" editor option)
-    - This will get the correct url from hive-site.xml
-    - Then it will use CLI commands to put a small csv in a test dir
+0. Create ADLS Environment Variables
+
+- Log into your Azure account and copy Access Key and Storage Account Name
+- Navigate to Project Settings -> Advanced -> and add two environment variables as shown below
+
+![alt-text]("img/env_vars.png)
+
+
+1. Install requirements: 
+
+- Open a CML Session with Python 3.6+ and Spark Runtime enabled (2 or 3 makes no difference) and Workbench editor
+
+![alt-text]("img/startcmlsession.png)
+
+
+- Run the "!pip3 install -r requirements.txt" command in the interactive Python prompt located at the bottom right or in the terminal (no need for the exclamation mark to prefix the command if running from terminal)
+
+![alt-text]("img/pipinstall.png)
+
+
+2. Execute "setup.py" (you can run this in a session with "Workbench" editor option)
+    - This will get the correct url from hive-site.xml and save the ADLS URL to a temporary variable called "storage"
+    - Then it will use the HDFS CLI to move data from the data folder into an ADLS container 
+    
+![alt-text]("img/executecode.png)
     
     
-3. Execute "read_cloud_storage_spark.py" (you can run this in a session with "Workbench" editor option)
+3. Execute "cloud2spark.py"
     - This will read the test csv file into a SparkSession and create a DataFrame
     - Then it will write the same file into another test dir with parquet format
-    
-    
-4. You can use the CLI command at the end of get_adls2_url.py to remove the test files via CLI
 
+![alt-text]("img/read_spark.png)   
+
+        
+4. Execute "adls2pandas.py" to read the parquet file into Pandas directly from ADLS 
+
+![alt-text]("img/read_from_adls.png)

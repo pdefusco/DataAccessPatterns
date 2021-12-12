@@ -5,7 +5,7 @@ from pyspark.sql import SparkSession
 spark = SparkSession\
     .builder\
     .appName("PythonSQL")\
-    .config("spark.yarn.access.hadoopFileSystems", os.environ['STORAGE'])\
+    .config("spark.yarn.access.hadoopFileSystems", storage)\
     .getOrCreate()
 
 #.master("local[*]")\
