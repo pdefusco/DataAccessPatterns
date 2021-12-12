@@ -1,11 +1,11 @@
-# Cloudera Machine Learning Quickstart
+# Cloudera Machine Learning - Data Access Quickstart
 
 ## Summary
 
-This project is a quickstart to show how to connect to S3 and ADLS with or without Spark from CML. 
+This project shows how to connect to S3 and ADLS with or without Spark from CML. 
 
 - The "cloud2spark.py" script works for both S3 or ADLS2 without making changes. 
-- The "adls2pandas.py" script is designed to read from ADLS2.
+- The "adls2pandas.py" script is designed to read from ADLS2 into Pandas without intermediate steps.
 
 
 # Steb by Step Instructions 
