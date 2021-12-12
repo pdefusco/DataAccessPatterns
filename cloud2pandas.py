@@ -2,22 +2,35 @@
 
 
 #Read data file from URI of default Azure Data Lake Storage Gen2
-
-
 from azure.identity import ClientSecretCredential
+from azure.storage.blob import BlobServiceClient
+from azure.identity import ClientSecretCredential
+
+
+
+
+
+
+
+
+
+
+
 from azure.storage.filedatalake import DataLakeServiceClient
 import pyarrow.parquet as pq
 import io
+import os
 
-client_id = ''
-client_secret = ''
-tenant_id = ''
+client_id = os.environ["CLIENT_ID"]
+client_secret = os.environ["CLIENT_SECRET"]
+tenant_id = os.environ["TENANT_ID"]
 credential = ClientSecretCredential(tenant_id, client_id, client_secret)
 
-storage_account_name = 'testadls05'
+storage_account_name = "data@go01esu"
+
 service_client = DataLakeServiceClient(account_url="{}://{}.dfs.core.windows.net".format(
     "https", storage_account_name), credential=credential)
-file_system = '<container name>'
+file_system = 'mytestdir'
 file_system_client = service_client.get_file_system_client(file_system)
 
 file_path = ''

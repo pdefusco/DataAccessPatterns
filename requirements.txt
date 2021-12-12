@@ -2,3 +2,10 @@ xlrd==1.2.0
 pandas==0.25.1
 numpy==1.17.2
 azure
+azure-identity
+azure-storage-file-datalake
+azure-storage-blob
+
+azure-mgmt-resource
+azure-mgmt-datalake-store
+azure-datalake-store
