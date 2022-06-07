@@ -1,8 +1,43 @@
-# Cloudera Machine Learning - Data Access Quickstart
+# Data Access Patterns
+
+
+## Objective
+
+This project provides an overview of available options for connecting to a variety of data sources from CML. 
+Most of these options are applicable to CDSW. If unsure, please check with your Cloudera Account Team.
+
 
 ## Summary
 
-This project shows how to connect to S3 and ADLS with or without Spark from CML. 
+Broadly speaking there are three categories of CML data access patterns. 
+
+
+### Machine Learning Discovery and Exploration
+
+In CML you can easily access CDW Virtual Warehouses via "Machine Learning Discovery and Exploration" aka "Data Connections". 
+
+When you create a CML Session a pop up window will automatically present you with available connections. 
+
+You can copy code from the pop up window and paste it into your session. No code modifications are required. 
+
+This feature was introduced introduced in late 2021 and the Cloudera ML Engineering Team will be adding more.
+
+If you want to learn more about CML Data Connections please visit [the documentation](https://docs.cloudera.com/machine-learning/cloud/mlde/topics/ml-mlde-intro.html) or this [how-to-article](https://community.cloudera.com/t5/Community-Articles/New-Feature-in-Cloudera-Machine-Learning-Data-Connections/ta-p/336775).
+
+### Other Access Patterns
+
+There are many options outside of the "Machine Learning Discovery and Exploration" feature.
+
+This project provides you with an ever growing reference. 
+
+If you have a request for a new Data Access pattern please don't hesitate to open a PR with this GitHub project.
+
+* [Accessing Data with Spark](https://docs.cloudera.com/machine-learning/cloud/import-data/topics/ml-access-data-with-spark.html)
+* [Accessing Data from your CML Project and Local Computer](https://docs.cloudera.com/machine-learning/cloud/import-data/topics/ml-accessing-local-data-from-your-computer.html)
+* [Accessing Data from HDFS](https://docs.cloudera.com/machine-learning/cloud/import-data/topics/ml-accessing-data-from-hdfs.html)
+* [Accessing Data from Hive](https://docs.cloudera.com/machine-learning/cloud/import-data/topics/ml-accessing-data-from-apache-hive.html) - Note: the "Machine Learning Discovery and Exploration" feature outlined above is recommended as a replacement to this option
+* 
+
 
 - The "cloud2spark.py" script works for both S3 or ADLS2 without making changes. 
 - The "adls2pandas.py" script is designed to read from ADLS2 into Pandas without intermediate steps.
